@@ -44,7 +44,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 }
         }
         
-## Unlock New Vehicle [/cars/carname/{idplayer}]
+## Unlock New Vehicle [/unlock/{carid}/{idplayer}]
 
 ### Retrieve player's gold and car's price [GET]
 
@@ -90,7 +90,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         
 + Response 200
 
-## Upgrade car's stats [/cars/carname/stats]
+## Upgrade car's stats [/carstats/{carid}/{playerid}]
 
 ### Retrieve car stats [GET]
 
@@ -112,7 +112,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
 + Response 200
 
-## Complete Race [/race]
+## Complete Race [/race/{playerid}]
 
 ### Stores race position and gold [POST]
 
