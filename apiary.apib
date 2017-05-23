@@ -1,0 +1,126 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Final Servidores
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## User [/users/{idplayer}]
+
+### Retrieves player's lvl, exp and gold [GET]
+
++ Response 200 (application/json)
+
+        {
+           "level": 1,
+           "experience": 0,
+           "gold": 0
+        }
+
+## User's Vehicle [/cars/{idplayer}]
+
+### Retrieves player's vehicles list [GET]
+
++ Response 200 (application/json)
+    
+        {
+            "name" : "car1"
+                {
+                    "topspeed": 30,
+                    "accel": 3,
+                    "handling": 1
+                },
+            "name" : "car2"
+                {
+                    "topspeed": 50,
+                    "accel": 6,
+                    "handling": 2
+                },
+            "name" : "car3"
+                {
+                    "topspeed": 70,
+                    "accel": 7,
+                    "handling": 4
+                }
+        }
+        
+## Unlock New Vehicle [/cars/carname/{idplayer}]
+
+### Retrieve player's gold and car's price [GET]
+
++ Response 200 (application/json)
+
+        {
+            "gold": 1000,
+            "price": 500
+        }
+        
+### Stores the new car unlocked [POST]
+
++ Request (application/json)
+
+        {
+            "name" : "car4"
+                {
+                    "topspeed": 100,
+                    "accel": 10,
+                    "handling": 5
+                }
+        }
+        
++ Response 200
+
+## Replace Car [/activecar/{idplayer}]
+
+### Retrieves active car [GET]
+
++ Response 200 (application/json)
+
+        {
+            "name" : "car1"
+        }
+
+### Replace active car [POST]
+
++ Request (application/json)
+
+        {
+            "name": "car2"
+        }
+        
++ Response 200
+
+## Upgrade car's stats [/cars/carname/stats]
+
+### Retrieve car stats [GET]
+
++ Response 200 (application/json)
+
+        {
+            "topspeed": 50,
+            "accel": 6,
+            "handling": 2
+        }
+
+### Stores new stats [POST]
+
++ Request (application/json)
+
+        {
+            "topspeed": 60
+        }
+
++ Response 200
+
+## Complete Race [/race]
+
+### Stores race position and gold [POST]
+
++ Request (application/json)
+
+        {
+            "position": 1,
+            "gold": 1000
+        }
+        
++ Response 200
